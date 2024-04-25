@@ -37,6 +37,7 @@ const MovieList = () => {
           <option value="rating-desc">Rating (Highest to Lowest)</option>
         </select>
       </label>
+      
       <table>
         <thead>
           <tr>
@@ -48,8 +49,10 @@ const MovieList = () => {
           {sortedMovies.map((movie) => (
             <tr key={movie.id}>
               <td>
+              <a href={`https://www.themoviedb.org/movie/${movie.id}`} target="_blank" rel="noopener noreferrer">
                 <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} style={{ width: '200px', height: '300px' }} />
-                <a href={`https://www.themoviedb.org/movie/${movie.id}`} target="_blank" rel="noopener noreferrer">{movie.title}</a>
+                {movie.title}
+              </a>
               </td>
               <td>{movie.vote_average}</td>
             </tr>
